@@ -1,36 +1,47 @@
 # 🌌 Dark Environment Object Detection 📸
 
 ## Purpose
-Image analysis and object detection technologies are crucial, especially in contexts like automotive applications. However, sensors and recognition systems often falter in scenarios with low visibility such as rainy weather or darkness. This project aims to demonstrate that CNNs can accurately detect objects in images taken in darkness or artificially noise-added conditions.
+Image analysis and object detection technologies play a critical role, particularly in applications such as automotive contexts. However, sensors and recognition systems often struggle in scenarios with limited visibility, such as rainy weather or darkness. This project seeks to demonstrate the capability of CNNs to accurately detect objects in images taken under low light conditions or with artificially added noise.
+
+The study aims to advance image analysis and object detection technologies by focusing on improving accuracy in challenging environments characterized by darkness and noise distortion. Leveraging deep learning techniques, specifically CNNs, the research proposes methods to achieve robust object detection performance even in images affected by low visibility or noise.
 
 ## Target
-The focus is primarily on scenarios where images are captured in dark environments.
+This study primarily focuses on images captured in dark environments, aiming to enhance object detection performance under conditions of reduced visibility.
+## Dark Image Exaples
+
+### cat-class
+
 
 ## References
-- Research Paper: [Revealing "Invisible" Objects in Darkness Using Deep Learning](https://ai-scholar.tech/articles/machine-learning/ai-dark-69) (January 31, 2019)
+This research builds upon the following foundational literature:
 
-- Qiita Article: [Handling Dark Environment Object Detection](https://qiita.com/TrashBoxx/items/2d441e46643f73c0ca19)
+- Research Paper: "Revealing 'Invisible' Objects in Darkness Using Deep Learning" (January 31, 2019, AI Scholar Tech)
+- Qiita Article: "Handling Dark Environment Object Detection" (TrashBoxx, Qiita)
+- Lecture/Coding Exercises: Primarily referencing activities in Sections 9 and 10.
 
-- Lecture/Coding Exercises: Section 9, 10
+## Datasets
+This study utilizes the following datasets:
+
+- **Cifar10**: A dataset containing images of 10 common object categories, widely used for image classification and object detection tasks.
+- **CBIU2019**: A dataset specialized in images captured in dark environments, suitable for research on object recognition under low light conditions.
+
+
 
 ## Implementation Strategy
+In this study, we outline the following strategies to achieve object detection in dark environments:
 
-1. **Dataset**: Utilize Cifar10 and CBIU2019 datasets for analysis.
+1. **Dataset Selection**: Utilize Cifar10 and CBIU2019 datasets to prepare for a variety of scenarios.
    
-2. **Object Categories**: Focus on common categories across Cifar10 and CBIU, namely [cat, dog, Car(=automobile), Ship(=Boat)]. Separate validation for Car and Ship due to potential lower accuracy.
+2. **Target Object Categories and Evaluation**: Focus on common categories across Cifar10 and CBIU, specifically evaluating potential accuracy challenges for categories like cars and ships under low visibility conditions.
 
 3. **Approaches for Dark Environment Object Detection**:
-   - Detection using pre-trained models on Cifar10.
-   - Fine-tuning ResNet50 on CBIU datasets.
-   - Preprocessing with edge detection algorithms before training.
+   - Implement object detection using pre-trained models on Cifar10.
+   - Fine-tune ResNet50 on the CBIU dataset to specialize in detecting objects in darkness.
+   - Explore preprocessing techniques such as edge detection algorithms to enhance model performance.
 
-Experiment with the above approaches and compare results.
+By exploring and comparing these approaches, we aim to innovate object detection technology in dark environments.
 
-    
-
-
-
-# 🌌 暗闇における物体検知 📸
+    # 🌌 暗闇における物体検知 📸
 
 ## 研究目的
 本研究の目的は、画像解析および物体検知技術の進展に貢献することです。具体的には、従来の方法では困難であった暗闇やノイズが加わった環境下での物体検出精度の向上を実現することを目指しています。深層学習（CNN）を活用し、暗闇での撮影やノイズ処理された画像においても、信頼性の高い物体検知を実現する手法を提案します。
@@ -46,6 +57,13 @@ Experiment with the above approaches and compare results.
 - Qiita 記事: 「暗闇での物体検知のハンドリング」（TrashBoxx氏、Qiita）
 
 - 参考講義／コーディング演習: 主にセクション9および10で行われた内容を参照しました。
+
+## データセット
+この研究では、以下のデータセットを使用しています。
+
+- **Cifar10**: 10種類の一般的な物体を含む画像データセット。画像の分類および物体検出に広く使用されています。
+
+- **CBIU2019**: 暗闇で撮影された画像に特化したデータセット。低照度条件下での物体認識の研究に適しています。
 
 ## 実装計画
 本研究では、以下の手法を用いて暗闇での物体検知の実現を目指します。
