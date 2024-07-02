@@ -10,9 +10,10 @@ This study primarily focuses on images captured in dark environments, aiming to 
 ## Dark Image Exaples
 
 ### * Cat-class
-<img width="692" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/f3e85c71-1861-4b88-a8ef-8e8083318c85">
-![image](https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/9ae923ae-2b49-43e9-92e7-b9cadd892a55)
-![image](https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/dc395ade-c210-4d7d-81d0-f799c82f0a5f)
+<img width="125" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/f3e85c71-1861-4b88-a8ef-8e8083318c85">
+<img width="125" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/9ae923ae-2b49-43e9-92e7-b9cadd892a55">
+<img width="125" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/dc395ade-c210-4d7d-81d0-f799c82f0a5f">
+
 
 ### * Dog-class
 ![image](https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/766aead6-c04d-4f76-bec8-4657f360a1c7)
