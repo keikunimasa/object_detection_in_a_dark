@@ -9,22 +9,19 @@ The study aims to advance image analysis and object detection technologies by fo
 This study primarily focuses on images captured in dark environments, aiming to enhance object detection performance under conditions of reduced visibility.
 ## Dark Image Exaples
 
-### * Cat-class
-<img width="125" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/f3e85c71-1861-4b88-a8ef-8e8083318c85">
-<img width="125" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/9ae923ae-2b49-43e9-92e7-b9cadd892a55">
-<img width="125" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/dc395ade-c210-4d7d-81d0-f799c82f0a5f">
+### Cat-class🐈
+<img width="400" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/f3e85c71-1861-4b88-a8ef-8e8083318c85">
+<img width="300" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/2987a47b-3a97-4f6a-8233-5a4e4b01c23f">
+<img width="300" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/e4ca4bc1-fe99-46a5-9365-0f9a943e01f3">
 
 
-### * Dog-class
-![image](https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/766aead6-c04d-4f76-bec8-4657f360a1c7)
-<img width="489" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/25f050de-e900-428d-8999-b3d18879606a">
+### Dog-class🐕
+<img width="300" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/03a3e720-38f6-4526-aa84-cd0078bac644">
+<img width="300" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/f995a754-5654-4c5f-a4b6-e3f7c6ab0366">
 
 
-### * Boat-class
-
-### * Car-class
-![image](https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/c995a804-1f50-4d26-9604-666fd2241383)
-
+### Car-class🚗
+<img width="359" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/ac99c3b5-9f6e-457a-9030-f8a738a8dbe5">
 
 
 ## References
