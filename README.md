@@ -29,7 +29,6 @@ This research builds upon the following foundational literature:
 
 - Research Paper: "Revealing 'Invisible' Objects in Darkness Using Deep Learning" (January 31, 2019, AI Scholar Tech)
 - Qiita Article: "Handling Dark Environment Object Detection" (TrashBoxx, Qiita)
-- Lecture/Coding Exercises: Primarily referencing activities in Sections 9 and 10.
 
 ## Datasets
 This study utilizes the following datasets:
@@ -53,78 +52,90 @@ In this study, we outline the following strategies to achieve object detection i
 
 By exploring and comparing these approaches, we aim to innovate object detection technology in dark environments.
 
-# Summary of Outcomes
+> # **Summary of Outcomes**
 
-## Proof of Concepts
-It was confirmed that models become unstable with images under dark conditions.
+## **Proof of Concepts**
+It was confirmed that models become unstable with images under dark conditions by attempts below.
 
 ### Dark-Image Classification Accuracy by Cifar10 × ResNet50　# Attemopt-1( lr=0.002, momentum=0.8 )
 
-画像
-画像
+<img width="250" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/c20233cf-8bb0-4a5b-a516-684ac396ac4b">
+<img width="250" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/9107edbe-490b-4962-a5ed-b31d6644a45b">
 
 ### Dark-Image Classification Accuracy by Cifar10 × ResNet50　# Attemopt-2( lr=0.003, momentum=0.9 )
-画像
 
+<img width="250" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/55654aea-6035-4c12-90e4-fe36cf7cb20e">
 
-Classification Results:
-* Under conditions, it is almost impossible to make predictions using models based on regular images.
+## Classification Results :
+* Under conditions, it is **almost impossible** to make predictions using models based on regular images.
 * For images with particularly distinguishable features, such as dogs, it seems that predictions can be made even in darkness.
 * There is a possibility that ships belong to a different class from those in CIFAR-10.
 
-Training and Classification with CIFAR-10
-* TComparing to Attempt-1, classes like Dog had low accuracy, while Cat and Ship achieved over 20% accuracy.
-* Predictions became unstable due to dark noise.
+## Conclusion on Training and Classification with CIFAR-10:
+* Comparing to Attempt-1, classes like Dog had low accuracy, while Cat and Ship achieved over 20% accuracy.
+* Predictions became **unstable** due to dark noise.
 * Even for easily distinguishable classes like Dog, the impact of noise was significant.
 
-## Implement Classification Models for Dark-Images
+# Implementing Classification Models for Dark-Images 
 ### Attempt-3: pre-trained ResNet50 and learn DarkImages( lr=0.003, momentum=0.8 )
 Results with Over fitting.
-画像
-* Even when training with dark images, the noise prevents proper learning.
+
+<img width="250" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/38916b79-e0f8-464f-9729-f190cf9f52fb">
+<img width="250" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/167b541d-ea6d-4539-b066-425fdb77c554">
+
+* Even when training with dark images, the noise prevents **proper learning**.
 * There is a possibility that the model is unable to detect features.
-* As this is fine-tuning of a pre-trained model, it may be influenced by previous training.
+* As this is fine-tuning of a pre-trained model, **it may be influenced by previous training**.
 
 > Next attempt: I will verify by building the model without fine-tuning as follows.
 
 ### Attempt-4: First-Scratch Model for Dark-Images
 Results with low accuracy...
-画像
+
+<img width="250" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/e2121175-9fd0-4513-b382-1125a17444e6">
+
+
 
 > # Sttrugled Some Attempts...
 Please read .ipynb file✨
 
-画像
+## ✨ Finally Made Very-Longed Models ✨
+<Epoch 0 to 12>
+<img width="250" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/d0d02b3e-7ad7-4cf8-a7da-e6332d2a9bcd">
+<epoch 18 to 36>
+<img width="250" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/2d8b6770-a332-446f-b50a-da78f7204cde">
+<Classificaiton Accuracy>
+<img width="250" alt="image" src="https://github.com/keikunimasa/object_detection_in_a_dark/assets/100010521/7835d3e1-fbff-4ab5-a3de-efdaa28b8ee7">
 
-画像
 
-## Summary of Training Results  
+## Summary of Training Results 
 After 36 epochs of training, an average accuracy of 82% to 88% was achieved across all classes.
 
-1. Accuracy varied by class, with cars and dogs being correctly identified with 95% to 100% accuracy. 
-2. However, ships had a low accuracy of 56%, and cats had an accuracy of 80%. 
+1. Accuracy varied by class, with **cars** and **dogs** being correctly identified with 95% to 100% accuracy. 
+2. **However**, ships had a low accuracy of 56%, and cats had an accuracy of 80%. 
 3. For the car class, features like headlights might make identification easier.
 
-> Predicting images of ships in darkness remains challenging under the given conditions and is a potential subject for further research. The research hypotheses for this issue are as follows:
+> Predicting images of ships in darkness remains challenging under the given conditions and is a potential subject for further research. The research **hypotheses** for this issue are as follows:
 
-> For ship images, 
-> 1. random reflections of light on the water may act as noise.
-> 2. Multiple ships in an image increase the amount of information during training, 
+> For **ship** images, 
+> 1. **random reflections of light** on the water may act as noise.
+> 2. **Multiple ships** in an image increase the amount of "Entropy" during training, 
 >    * possibly leading to insufficient iterations
 >    * number of image data.    
 
 # Important Open Questions ✨
-1. Developing methods with high generalizability to datasets with varying information content.
-2. Proposing models that can handle random and strong noise without pre-processing the data.
+1. Developing methods with **high generalizability** to data with images which has large "Entropy".
+2. Proposing models that can handle **random and strong noise without pre-processing** the data.
 
-Especially, addressing the first issue could solve challenges in noisy environments like MRI images. These issues are open questions, and discussions and pull requests are welcome.
+Especially, addressing the first issue could solve challenges in **noisy environments like MRI images**. 
+These issues are open questions, and discussions and pull requests are welcome.
 
-## Current Solutions
+## **Current Solutions and Ideas**🤔
 The proposed solutions are:
-1. Implementing a gate that separates object detection and classification.
-2. Applying a noise reduction filter during pre-processing.
+1. Implementing gates that separates object detection and classification.
+2. Applying a **noise reduction filter** during pre-processing.
 3. Use other known models or device instead such as:
-   * DenseNet
+   * **DenseNet**
    * Yolo
    * Quanta Image Sensor
 However, the author has not yet addressed these solutions.  
