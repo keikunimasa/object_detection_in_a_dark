@@ -53,7 +53,84 @@ In this study, we outline the following strategies to achieve object detection i
 
 By exploring and comparing these approaches, we aim to innovate object detection technology in dark environments.
 
-    # 🌌 暗闇における物体検知 📸
+# Summary of Outcomes
+
+## Proof of Concepts
+It was confirmed that models become unstable with images under dark conditions.
+
+### Dark-Image Classification Accuracy by Cifar10 × ResNet50　# Attemopt-1( lr=0.002, momentum=0.8 )
+
+画像
+画像
+
+### Dark-Image Classification Accuracy by Cifar10 × ResNet50　# Attemopt-2( lr=0.003, momentum=0.9 )
+画像
+
+
+Classification Results:
+* Under conditions, it is almost impossible to make predictions using models based on regular images.
+* For images with particularly distinguishable features, such as dogs, it seems that predictions can be made even in darkness.
+* There is a possibility that ships belong to a different class from those in CIFAR-10.
+
+Training and Classification with CIFAR-10
+* TComparing to Attempt-1, classes like Dog had low accuracy, while Cat and Ship achieved over 20% accuracy.
+* Predictions became unstable due to dark noise.
+* Even for easily distinguishable classes like Dog, the impact of noise was significant.
+
+## Implement Classification Models for Dark-Images
+### Attempt-3: pre-trained ResNet50 and learn DarkImages( lr=0.003, momentum=0.8 )
+Results with Over fitting.
+画像
+* Even when training with dark images, the noise prevents proper learning.
+* There is a possibility that the model is unable to detect features.
+* As this is fine-tuning of a pre-trained model, it may be influenced by previous training.
+
+> Next attempt: I will verify by building the model without fine-tuning as follows.
+
+### Attempt-4: First-Scratch Model for Dark-Images
+Results with low accuracy...
+画像
+
+> # Sttrugled Some Attempts...
+Please read .ipynb file✨
+
+画像
+
+画像
+
+## Summary of Training Results  
+After 36 epochs of training, an average accuracy of 82% to 88% was achieved across all classes.
+
+1. Accuracy varied by class, with cars and dogs being correctly identified with 95% to 100% accuracy. 
+2. However, ships had a low accuracy of 56%, and cats had an accuracy of 80%. 
+3. For the car class, features like headlights might make identification easier.
+
+> Predicting images of ships in darkness remains challenging under the given conditions and is a potential subject for further research. The research hypotheses for this issue are as follows:
+
+> For ship images, 
+> 1. random reflections of light on the water may act as noise.
+> 2. Multiple ships in an image increase the amount of information during training, 
+>    * possibly leading to insufficient iterations
+>    * number of image data.    
+
+# Important Open Questions ✨
+1. Developing methods with high generalizability to datasets with varying information content.
+2. Proposing models that can handle random and strong noise without pre-processing the data.
+
+Especially, addressing the first issue could solve challenges in noisy environments like MRI images. These issues are open questions, and discussions and pull requests are welcome.
+
+## Current Solutions
+The proposed solutions are:
+1. Implementing a gate that separates object detection and classification.
+2. Applying a noise reduction filter during pre-processing.
+3. Use other known models or device instead such as:
+   * DenseNet
+   * Yolo
+   * Quanta Image Sensor
+However, the author has not yet addressed these solutions.  
+
+
+# 🌌 暗闇における物体検知 📸
 
 ## 研究目的
 本研究の目的は、画像解析および物体検知技術の進展に貢献することです。具体的には、従来の方法では困難であった暗闇やノイズが加わった環境下での物体検出精度の向上を実現することを目指しています。深層学習（CNN）を活用し、暗闇での撮影やノイズ処理された画像においても、信頼性の高い物体検知を実現する手法を提案します。
