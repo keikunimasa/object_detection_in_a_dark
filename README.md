@@ -36,7 +36,15 @@ This study utilizes the following datasets:
 - **Cifar10**: A dataset containing images of 10 common object categories, widely used for image classification and object detection tasks.
 - **CBIU2019**: A dataset specialized in images captured in dark environments, suitable for research on object recognition under low light conditions.
 
+### Theorem: Reasons for Inference Failure on Dark Images and Hypotheses in This Field
+- As shown in the above image, the distribution is concentrated near zero across all channels.
+- The above graph also confirms that pixel values above 150 are missing.
+- Due to these effects, Shannon entropy and features input into machine learning are likely to be significantly reduced.
 
+## Ensuring Darkness in Images Processed to Mimic a Dark Distribution
+Dark images were generated based on the two points above.
+- By applying a process that results in a distribution similar to the above graph to any image, qualitatively dark images should be obtained.
+- Such processing was performed within a Notebook, and the model's performance was evaluated using images filtered with darkness, as shown below.
 
 ## Implementation Strategy
 In this study, we outline the following strategies to achieve object detection in dark environments:
