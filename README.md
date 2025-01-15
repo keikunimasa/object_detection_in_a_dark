@@ -137,6 +137,9 @@ After 36 epochs of training, an average accuracy of 82% to 88% was achieved acro
 - By applying various transformations such as color adjustments, rotation, scaling, cropping, and color tone changes, the model's generalization performance was improved, achieving high accuracy on validation data.  
 
 The graph of the training results is shown below.
+![image]()
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/96fd6300-ec5c-4c50-b59d-d4b47130ff82">
 
 # Important Open Questions ✨
 1. Developing methods with **high generalizability** to data with images which has large "Entropy".
