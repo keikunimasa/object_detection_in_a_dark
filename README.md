@@ -141,6 +141,15 @@ The graph of the training results is shown below.
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/96fd6300-ec5c-4c50-b59d-d4b47130ff82">
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/1c4c8acd-b41c-43b1-8494-1966c748afa7">
 
+## Validate the model Accuracy Using the Image from the Internet
+以下はモデルにとって絶対に入力のされたことのない画像を元に予測を行った一例だ。
+
+<img widt="400" alt="image" src="https://github.com/user-attachments/assets/f31fb3c3-7e8c-4ec5-a646-47c8db099ffc">
+
+かなり暗い画像に対しても正確に犬が写っていることを予測している。\
+画像処理で判断根拠を可視化する機能を持つGradCAMを用いて、モデルがどこに注目しているか、畳込み層のレイヤー3及び最終層の4で確認すると以下のように、犬の写っている領域を重視していることが確認できる。
+
+
 # Important Open Questions ✨
 1. Developing methods with **high generalizability** to data with images which has large "Entropy".
 2. Proposing models that can handle **random and strong noise without pre-processing** the data.
