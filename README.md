@@ -129,7 +129,14 @@ After 36 epochs of training, an average accuracy of 82% to 88% was achieved acro
 > 1. **random reflections of light** on the water may act as noise.
 > 2. **Multiple ships** in an image increase the amount of "Entropy" during training, 
 >    * possibly leading to insufficient iterations
->    * number of image data.    
+>    * number of image data.
+
+### Significant Accuracy Improvement Achieved Through Cross-Validation and Data Augmentation
+- The K-Fold cross-validation method was used.  
+- The data includes various types of information beyond class labels, enabling learning in diverse scenarios.  
+- By applying various transformations such as color adjustments, rotation, scaling, cropping, and color tone changes, the model's generalization performance was improved, achieving high accuracy on validation data.  
+
+The graph of the training results is shown below.
 
 # Important Open Questions ✨
 1. Developing methods with **high generalizability** to data with images which has large "Entropy".
