@@ -36,7 +36,15 @@ This study utilizes the following datasets:
 - **Cifar10**: A dataset containing images of 10 common object categories, widely used for image classification and object detection tasks.
 - **CBIU2019**: A dataset specialized in images captured in dark environments, suitable for research on object recognition under low light conditions.
 
+### Theorem: Reasons for Inference Failure on Dark Images and Hypotheses in This Field
+- As shown in the above image, the distribution is concentrated near zero across all channels.
+- The above graph also confirms that pixel values above 150 are missing.
+- Due to these effects, Shannon entropy and features input into machine learning are likely to be significantly reduced.
 
+## Ensuring Darkness in Images Processed to Mimic a Dark Distribution
+Dark images were generated based on the two points above.
+- By applying a process that results in a distribution similar to the above graph to any image, qualitatively dark images should be obtained.
+- Such processing was performed within a Notebook, and the model's performance was evaluated using images filtered with darkness, as shown below.
 
 ## Implementation Strategy
 In this study, we outline the following strategies to achieve object detection in dark environments:
@@ -121,11 +129,35 @@ After 36 epochs of training, an average accuracy of 82% to 88% was achieved acro
 > 1. **random reflections of light** on the water may act as noise.
 > 2. **Multiple ships** in an image increase the amount of "Entropy" during training, 
 >    * possibly leading to insufficient iterations
->    * number of image data.    
+>    * number of image data.
+
+### Significant Accuracy Improvement Achieved Through Cross-Validation and Data Augmentation
+- The K-Fold cross-validation method was used.  
+- The data includes various types of information beyond class labels, enabling learning in diverse scenarios.  
+- By applying various transformations such as color adjustments, rotation, scaling, cropping, and color tone changes, the model's generalization performance was improved, achieving high accuracy on validation data.  
+
+The graph of the training results is shown below.
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/96fd6300-ec5c-4c50-b59d-d4b47130ff82">
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/1c4c8acd-b41c-43b1-8494-1966c748afa7">
+
+## Validate the model Accuracy Using the Image from the Internet
+以下はモデルにとって絶対に入力のされたことのない画像を元に予測を行った一例だ。
+
+<img widt="500 alt="image" src="https://github.com/user-attachments/assets/f31fb3c3-7e8c-4ec5-a646-47c8db099ffc">
+
+かなり暗い画像に対しても正確に犬が写っていることを予測している。\
+画像処理で判断根拠を可視化する機能を持つGradCAMを用いて、モデルがどこに注目しているか、畳込み層のレイヤー3及び最終層の4で確認すると以下のように、犬の写っている領域を重視していることが確認できる。
+
+<img widt="400" alt="image" src="https://github.com/user-attachments/assets/263eda86-df52-46f5-86ca-9bee1ed3a7cf">
+
+<img widt="400" alt="image" src="https://github.com/user-attachments/assets/c8ce4525-f81d-4aa7-9fe6-fdda8041cf86">
 
 # Important Open Questions ✨
 1. Developing methods with **high generalizability** to data with images which has large "Entropy".
 2. Proposing models that can handle **random and strong noise without pre-processing** the data.
+3. This time, the data has a lots of features except for target class.
+4. There should be more flexible convolutional architecture, beside Res-NET.
 
 Especially, addressing the first issue could solve challenges in **noisy environments like MRI images**. 
 These issues are open questions, and discussions and pull requests are welcome.
