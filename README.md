@@ -40,6 +40,7 @@ This study utilizes the following datasets:
 - As shown in the above image, the distribution is concentrated near zero across all channels.
 - The above graph also confirms that pixel values above 150 are missing.
 - Due to these effects, Shannon entropy and features input into machine learning are likely to be significantly reduced.
+![image](https://github.com/user-attachments/assets/5c4d3ff8-4e4e-41a7-b3c7-9d7465f5d6c5)
 
 ## Ensuring Darkness in Images Processed to Mimic a Dark Distribution
 Dark images were generated based on the two points above.
