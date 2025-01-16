@@ -41,6 +41,10 @@ This study utilizes the following datasets:
 - The above graph also confirms that pixel values above 150 are missing.
 - Due to these effects, Shannon entropy and features input into machine learning are likely to be significantly reduced.
 ![image](https://github.com/user-attachments/assets/5c4d3ff8-4e4e-41a7-b3c7-9d7465f5d6c5)
+![image](https://github.com/user-attachments/assets/38c307fe-45b9-41c7-956d-addb010e6344)
+![image](https://github.com/user-attachments/assets/99fcbe8a-3120-4838-a36c-d970adb3d073)
+![image](https://github.com/user-attachments/assets/9ff6c84a-686a-4c9b-801b-4cec9d2ab3b6)
+
 
 ## Ensuring Darkness in Images Processed to Mimic a Dark Distribution
 Dark images were generated based on the two points above.
